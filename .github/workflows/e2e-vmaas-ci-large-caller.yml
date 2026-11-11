@@ -41,6 +41,7 @@ concurrency:
 
 jobs:
   osac-ci-large:
+    name: E2E VMaaS 3-Node Full Install
     permissions:
       contents: read
       id-token: write
@@ -61,6 +62,7 @@ jobs:
       flavor-image: quay.io/osac-project/cluster-flavors:mno-3node-24gb
       flavor-name: mno-3node-24gb
       cluster-topology: mno
+      update-cluster-tool: true
       runner-label: ${{ inputs.runner-label || 'osac-ci-large' }}
       notify-on-failure: false
       enable-ai-diagnostic: false
